@@ -19,10 +19,14 @@ import { HomeComponent } from './containers/home/home.component';
         {
           path: 'associated-schools',
           loadChildren: () =>
-            import('associated-schools/Module').then(
-              (m) => m.RemoteEntryModule
+          import('associated-schools/Module').then(
+            (m) => m.RemoteEntryModule
             ),
-        },
+          },
+          {
+            path: '**',
+            component: HomeComponent,
+          },
       ],
       { initialNavigation: 'enabledBlocking' }
     ),

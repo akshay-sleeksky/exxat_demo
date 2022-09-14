@@ -24,11 +24,15 @@
             </div>
         </div>
         <div class="bg-gray-100 w-full p-5 flex-wrap flex content-start">
-            <div (click) = "redirectTo()" *ngFor="let tab of tabs" class="{{ 'w-[calc(50%-2rem)] flex bg-white p-4 h-36 rounded-md hover:cursor-pointer m-4 border-l-8 '+tab.color }}">
+            <div (click) = "redirectTo( tab.src )" *ngFor="let tab of tabs" class="{{ 'w-[calc(50%-2rem)] flex bg-white p-4 h-36 rounded-md hover:cursor-pointer m-4 border-l-8 '+tab.color }}">
                 <div class="m-4"><img  class="w-10 hover:cursor-pointer" src="{{ tab.icon }}" alt="{{ tab.header }}"></div>
                 <div>
                     <p class="font-medium">{{ tab.header }}</p>
                     <p>{{ tab.content }}</p>
+                </div>
+                <div *ngIf="tab.notification" class=" h-100 aspect-square rounded-md border-2 justify-center items-center text-center p-4">
+                    <div class="{{'font-semibold text-2xl '+tab.textColor}}">{{ tab.notification }}</div>
+                    <p class="text-gray-400">Schools</p>
                 </div>
             </div>
         </div>

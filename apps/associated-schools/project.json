@@ -1,0 +1,118 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/associated-schools/src",
+  "prefix": "ng-mf",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/associated-schools",
+        "index": "apps/associated-schools/src/index.html",
+        "main": "apps/associated-schools/src/main.ts",
+        "polyfills": "apps/associated-schools/src/polyfills.ts",
+        "tsConfig": "apps/associated-schools/tsconfig.app.json",
+        "assets": [
+          "apps/associated-schools/src/favicon.ico",
+          "apps/associated-schools/src/assets"
+        ],
+        "styles": ["apps/associated-schools/src/styles.css"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/associated-schools/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/associated-schools/src/environments/environment.ts",
+              "with": "apps/associated-schools/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/associated-schools/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:webpack-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "associated-schools:build:production"
+        },
+        "development": {
+          "browserTarget": "associated-schools:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4201,
+        "publicHost": "http://localhost:4201"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "associated-schools:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/associated-schools/**/*.ts",
+          "apps/associated-schools/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/associated-schools"],
+      "options": {
+        "jestConfig": "apps/associated-schools/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/angular:file-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "associated-schools:build",
+        "port": 4201
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "associated-schools:build:development"
+        },
+        "production": {
+          "buildTarget": "associated-schools:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

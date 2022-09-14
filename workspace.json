@@ -1,5 +1,10 @@
 {
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
-  "projects": {}
+  "projects": {
+    "associated-schools": "apps/associated-schools",
+    "associated-schools-e2e": "apps/associated-schools-e2e",
+    "dashboard": "apps/dashboard",
+    "dashboard-e2e": "apps/dashboard-e2e"
+  }
 }

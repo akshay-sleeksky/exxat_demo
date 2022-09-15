@@ -4,24 +4,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
+import { HomeComponent } from './containers/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent, NxWelcomeComponent, HomeComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       [
         {
           path: '',
-          component: NxWelcomeComponent,
+          component: HomeComponent,
         },
         {
           path: 'associated-schools',
           loadChildren: () =>
-            import('associated-schools/Module').then(
-              (m) => m.RemoteEntryModule
+          import('associated-schools/Module').then(
+            (m) => m.RemoteEntryModule
             ),
-        },
+          },
+          {
+            path: '**',
+            component: HomeComponent,
+          },
       ],
       { initialNavigation: 'enabledBlocking' }
     ),

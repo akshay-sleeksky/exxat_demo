@@ -1,0 +1,41 @@
+<div class="h-screen">
+    <div class="flex justify-between p-3 shadow-md h-[calc(8%)]">
+        <div class="flex space-x-10 justify-center items-center">
+            <img  class="h-4 hover:cursor-pointer" src="assets/icons/Hamburger_icon.png" alt="Ham">
+            <p (click) = "redirectTo('/')" class="cursor-pointer">Home</p>
+        </div>
+        <div class="flex space-x-10 items-center">
+            <img  class="h-4 hover:cursor-pointer" src="assets/icons/Apps_icon.png" alt="Apps">
+            <img  class="h-4 hover:cursor-pointer" src="assets/icons/Hint_icon.png" alt="Hint">
+            <img  class="h-4 hover:cursor-pointer" src="assets/icons/Speaker_icon.png" alt="Speaker">
+            <p>Alexia Bracken</p>
+            <img  class="w-4 hover:cursor-pointer" src="assets/icons/down_icon.png" alt="down">
+        </div>        
+    </div>
+    <div class="h-[calc(100%-8%)] flex">
+        <div class="w-1/4 h-full p-3 overflow-auto">
+            <div class="border-b-2 border-gray-400 pb-2"><p class="font-medium">Announcements</p></div>
+            <div *ngFor="let i of array" class="border-b-2 border-gray-400 pt-4">
+                <p class="font-medium">Announcement Title 4</p>
+                <p class="text-gray-400">Sep 01, 2022 09:53 AM</p>
+                <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem mauris consectetur vulputate
+                     aenean in enim ultrices. Odio...</p>
+                <p class="text-blue-300 hover:cursor-pointer"><a>Show more</a></p>
+            </div>
+        </div>
+        <div class="bg-gray-100 w-full p-5 flex-wrap flex content-start">
+            <div (click) = "redirectTo( tab.src )" *ngFor="let tab of tabs" class="{{ 'w-[calc(50%-2rem)] flex bg-white p-4 h-36 rounded-md hover:cursor-pointer m-4 border-l-8 '+tab.color }}">
+                <div class="m-4"><img  class="w-10 hover:cursor-pointer" src="{{ tab.icon }}" alt="{{ tab.header }}"></div>
+                <div>
+                    <p class="font-medium">{{ tab.header }}</p>
+                    <p>{{ tab.content }}</p>
+                </div>
+                <div *ngIf="tab.notification" class=" h-100 aspect-square rounded-md border-2 justify-center items-center text-center p-4">
+                    <div class="{{'font-semibold text-2xl '+tab.textColor}}">{{ tab.notification }}</div>
+                    <p class="text-gray-400">Schools</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

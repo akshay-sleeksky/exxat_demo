@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './containers/home/home.component';
+import { HeaderNav } from '@ng-mf/data';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, HeaderNav],
   imports: [
     BrowserModule,
     RouterModule.forRoot(

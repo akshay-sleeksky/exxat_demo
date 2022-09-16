@@ -6,6 +6,7 @@
     "associated-schools-e2e": "apps/associated-schools-e2e",
     "dashboard": "apps/dashboard",
     "dashboard-e2e": "apps/dashboard-e2e",
+    "data": "libs/data",
     "student-placement": "apps/student-placement",
     "student-placement-e2e": "apps/student-placement-e2e"
   }

@@ -5,6 +5,8 @@
     "associated-schools": "apps/associated-schools",
     "associated-schools-e2e": "apps/associated-schools-e2e",
     "dashboard": "apps/dashboard",
-    "dashboard-e2e": "apps/dashboard-e2e"
+    "dashboard-e2e": "apps/dashboard-e2e",
+    "student-placement": "apps/student-placement",
+    "student-placement-e2e": "apps/student-placement-e2e"
   }
 }

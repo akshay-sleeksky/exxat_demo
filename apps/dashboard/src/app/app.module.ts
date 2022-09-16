@@ -26,6 +26,11 @@ import { HomeComponent } from './containers/home/home.component';
           path: '**',
           component: HomeComponent,
         },
+        {
+          path: 'student-placement',
+          loadChildren: () =>
+            import('student-placement/Module').then((m) => m.RemoteEntryModule),
+        },
       ],
       { initialNavigation: 'enabledBlocking' }
     ),

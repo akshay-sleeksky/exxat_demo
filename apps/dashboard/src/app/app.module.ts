@@ -24,13 +24,13 @@ import { HeaderNav } from '@ng-mf/data';
             ),
         },
         {
-          path: '**',
-          component: HomeComponent,
-        },
-        {
           path: 'student-placement',
           loadChildren: () =>
             import('student-placement/Module').then((m) => m.RemoteEntryModule),
+        },
+        {
+          path: '**',
+          component: HomeComponent,
         },
       ],
       { initialNavigation: 'enabledBlocking' }

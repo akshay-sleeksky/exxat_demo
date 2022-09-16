@@ -11,6 +11,7 @@ interface Tabs {
   notification: number;
 }
 
+
 @Component({
   selector: 'ng-mf-home',
   templateUrl: './home.component.html',
@@ -64,7 +65,7 @@ export class HomeComponent implements OnInit {
     },
     {
       icon: 'assets/icons/Student_placement_icon.svg',
-      src: 'associated-schools',
+      src: 'student-placement',
       header: 'Student Placements',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem mauris consectetur vulputate aenean in enim ultrices.',

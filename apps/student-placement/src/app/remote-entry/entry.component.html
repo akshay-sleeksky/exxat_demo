@@ -1,0 +1,131 @@
+<div class="h-screen overflow-hidden overflow-y-auto">
+    <div class="flex justify-between p-3 shadow-md h-[calc(8%)]">
+      <div class="flex space-x-10 justify-center items-center">
+        <img
+          class="h-4 hover:cursor-pointer"
+          src="assets/icons/Hamburger_icon.png"
+          alt="Ham"
+        />
+        <p (click)="redirectTo('/')" class="cursor-pointer">Student Placement</p>
+      </div>
+      <div class="flex space-x-10 items-center">
+        <img
+          class="h-4 hover:cursor-pointer"
+          src="assets/icons/Apps_icon.png"
+          alt="Apps"
+        />
+        <img
+          class="h-4 hover:cursor-pointer"
+          src="assets/icons/Hint_icon.png"
+          alt="Hint"
+        />
+        <img
+          class="h-4 hover:cursor-pointer"
+          src="assets/icons/Speaker_icon.png"
+          alt="Speaker"
+        />
+        <p>Alexia Bracken</p>
+        <img
+          class="w-4 hover:cursor-pointer"
+          src="assets/icons/down_icon.png"
+          alt="down"
+        />
+      </div>
+    </div>
+    <div class="bg-gray-100 flex-grow flex  justify-center">
+        <div class="m-4 w-full flex flex-col">
+            <!-- header row -->
+
+            <div class="flex bg-white  justify-between border-2 border-b-0 rounded-t-md">
+                <div class="py border-r border-gray-200/20 flex items-center">
+                    <img
+                    class="px hover:cursor-pointer"
+                    src="assets/icons/Search_icon.png"
+                    alt="Apps"
+                    />
+                    <p class="placeholder text-sm pl-32">Search</p>
+                </div>
+            <div class="px border-l flex items-center">
+                <div>
+                <img
+                    class="px hover:cursor-pointer"
+                    src="assets/icons/File_toopen.png"
+                    alt="Apps"
+                />
+                </div>
+                <div>
+                <img
+                    class="px hover:cursor-pointer"
+                    src="assets/icons/Settings.png"
+                    alt="Apps"
+                />
+                </div>
+                <div>
+                <img
+                    class="px hover:cursor-pointer"
+                    src="assets/icons/Filter.png"
+                    alt="Apps"
+                />
+                </div>
+            </div>
+            </div>
+            <!-- header-ends row -->
+
+            <!-- table start -->
+            <div class='overflow-x-auto'>
+            <table class="bg-white table-auto overflow-scroll w-full ">
+            <thead >
+                <tr>
+                <th width="5rem">STUDENT</th>
+                <th width="5rem">COURSE</th>
+                <th width="5rem">PLACEMENT</th>
+                <th width="5rem">LOCATION AND SETTINGS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of rows">
+                <td>{{ row.name }}</td>
+                <td>{{ row.address }}</td>
+                <td>
+                    <p class="link">
+                    {{ row.siteName
+                    }}<img
+                        class="px hover:cursor-pointer"
+                        src="assets/icons/Tag.png"
+                        alt="Apps"
+                    />
+                    </p>
+                </td>
+                <td>{{ row.siteAddress }}</td>
+                </tr>
+            </tbody>
+            </table>
+            </div>
+            
+            <!-- table end -->
+
+            <!-- footer row -->
+            <div class="bg-white flex justify-end items-center lower-border">
+            <div class="flex">
+                <p class="px text-sm">Items per page:20</p>
+                <p class="px text-sm">1-20 of 328</p>
+            </div>
+            <div>
+                <img
+                class="px hover:cursor-pointer"
+                src="assets/icons/Left_chevron.png"
+                alt="Apps"
+                />
+            </div>
+            <div class="p-3">
+                <img
+                class="px hover:cursor-pointer"
+                src="assets/icons/Right_chevron.png"
+                alt="Apps"
+                />
+            </div>
+            </div>
+            <!-- footer-ends row -->
+        </div>
+    </div>
+</div>

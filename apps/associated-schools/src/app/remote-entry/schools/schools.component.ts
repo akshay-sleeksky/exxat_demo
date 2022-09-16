@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'ng-mf-associated-schools-entry',
-  styleUrls: ['./entry.component.css'],
-  templateUrl: './entry.component.html',
+  selector: 'ng-mf-schools',
+  templateUrl: './schools.component.html',
+  styleUrls: ['./schools.component.css'],
 })
-export class RemoteEntryComponent {
+export class SchoolsComponent {
   constructor(private route: Router) {}
 
   rows = [
@@ -31,8 +31,7 @@ export class RemoteEntryComponent {
     },
   ];
 
-  redirectTo = (site = '/associated-schools') => {
-    console.log(site);
+  redirectTo = (site = '/school') => {
     this.route.navigate([site]);
   };
 }

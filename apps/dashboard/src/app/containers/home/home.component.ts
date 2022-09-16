@@ -11,7 +11,6 @@ interface Tabs {
   notification: number;
 }
 
-
 @Component({
   selector: 'ng-mf-home',
   templateUrl: './home.component.html',

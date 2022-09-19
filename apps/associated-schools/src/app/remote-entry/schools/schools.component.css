@@ -74,3 +74,27 @@ td {
   border-width: 1px;
   border-color: #0000001f;
 }
+
+.my-box {
+  margin-top: 10px; /* remove this after test  */
+  background-color: white;
+  border-radius: 16px;
+  border-width: 1px;
+  border-color: #0000001f;
+}
+
+.box-header {
+  border-bottom-width: 1px;
+  border-color: #0000001f;
+  padding: 0px 16px;
+}
+
+.box-content {
+  padding: 0;
+}
+
+.box-footer {
+  border-top-width: 1px;
+  border-color: #0000001f;
+  padding: 12px 16px;
+}

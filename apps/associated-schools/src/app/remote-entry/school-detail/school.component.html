@@ -23,6 +23,37 @@
       <p class="h1">Sahuarita Primary Schools:Lorri Andrews</p>
       <p class="h2">1901 Thorridge Cir. Shiloh, Hawai 81063</p>
     </div>
+    <!-- box-footer should be added to footer when content is available -->
+
+    <div class="my-box">
+      <div class="box-header">
+        <div class="flex justify-between">
+          <p>Basic Information</p>
+          <img
+            class="px hover:cursor-pointer"
+            src="assets/icons/Pencil.svg"
+            alt="Apps"
+          />
+        </div>
+      </div>
+      <div class="box-content">
+        <div class="grid grid-cols-4 gap-4 my-4">
+          <div class="flex flexCol" *ngFor="let element of dataArray">
+            <p class="h1">{{ element.key }}</p>
+            <p class="h3">{{ element.value }}</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm">
+            Last updated by <b><i>Alexa Brackan</i></b> on
+            <b><i>Sep 12, 2022 </i></b>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <my-box></my-box> -->
+
     <!-- school detail code ends  -->
   </div>
 </div>

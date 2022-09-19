@@ -9,7 +9,34 @@ import { Router } from '@angular/router';
 export class SchoolDetailComponent {
   constructor(private route: Router) {}
 
-  //   redirectTo = (site = '/associated-schools') => {
-  //     this.route.navigate([site]);
-  //   };
+  dataArray = [
+    {
+      key: 'Alias Name',
+      value: 'Name of the Alias',
+    },
+    {
+      key: 'Address',
+      value: '1901 Thorridge Cir. Shiloh, Hawai 81063',
+    },
+    {
+      key: 'Phone Number',
+      value: '9753124680',
+    },
+    {
+      key: 'Website',
+      value: 'https://www.google.com/',
+    },
+    {
+      key: 'EIN',
+      value: '87247810',
+    },
+    {
+      key: 'FAX',
+      value: '9876543210',
+    },
+    {
+      key: 'Total locations',
+      value: '53',
+    },
+  ];
 }

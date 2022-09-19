@@ -87,3 +87,37 @@ td {
   font-size: 80%;
   color: rgba(0, 0, 0, 0.7);
 }
+
+.h3 {
+  font-size: 90%;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.h3 {
+  font-size: 90%;
+}
+
+.my-box {
+  margin-top: 10px; /* remove this after test  */
+  background-color: white;
+  border-radius: 16px;
+  border-width: 1px;
+  border-color: #0000001f;
+  max-width: 1200px;
+}
+
+.box-header {
+  border-bottom-width: 1px;
+  border-color: #0000001f;
+  padding: 12px 16px;
+}
+
+.box-content {
+  padding: 12px 16px;
+}
+
+.box-footer {
+  border-top-width: 1px;
+  border-color: #0000001f;
+  padding: 12px 16px;
+}

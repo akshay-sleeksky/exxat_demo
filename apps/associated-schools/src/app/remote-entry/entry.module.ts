@@ -6,7 +6,7 @@ import { SchoolsComponent } from './schools/schools.component';
 import { SchoolDetailComponent } from './school-detail/school.component';
 
 @NgModule({
-  declarations: [SchoolsComponent, HeaderNav],
+  declarations: [SchoolsComponent, SchoolDetailComponent, HeaderNav],
   imports: [
     CommonModule,
     RouterModule.forChild([

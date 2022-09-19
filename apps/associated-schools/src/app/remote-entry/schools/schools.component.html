@@ -1,19 +1,20 @@
-<div class="h-screen">
+<div class="h-screen bg-gray-100">
   <header-nav></header-nav>
-  <div class="bg-gray-100 flex justify-center">
-    <div class="my-4 flex flexCol">
-      <div class="flex my-4">
-        <p class="link">Dashboard</p>
-        <img
-          class="px hover:cursor-pointer"
-          src="assets/icons/Right_chevron.png"
-          alt="Apps"
-        />
-        <p class="placeholder">Associated Schools</p>
-      </div>
+  <div class="mx-4 flex justify-center flexCol">
+    <div class="flex my-4">
+      <!-- my location -->
+      <p class="link">Dashboard</p>
+      <img
+        class="px hover:cursor-pointer"
+        src="assets/icons/Right_arrow.svg"
+        alt="Apps"
+      />
+      <p class="placeholder">Associated Schools</p>
+    </div>
 
+    <!-- associated school code start  -->
+    <div class="flex flexCol">
       <!-- header row -->
-
       <div class="flex bg-white justify-between upper-border">
         <div class="py border-r border-gray-200/20 flex items-center">
           <img
@@ -64,14 +65,14 @@
             <td>{{ row.name }}</td>
             <td>{{ row.address }}</td>
             <td>
-              <p class="link">
+              <a routerLink="school" class="link">
                 {{ row.siteName
                 }}<img
                   class="px hover:cursor-pointer"
                   src="assets/icons/Tag.png"
                   alt="Apps"
                 />
-              </p>
+              </a>
             </td>
             <td>{{ row.siteAddress }}</td>
           </tr>
@@ -102,5 +103,6 @@
       </div>
       <!-- footer-ends row -->
     </div>
+    <!-- associated school code ends  -->
   </div>
 </div>

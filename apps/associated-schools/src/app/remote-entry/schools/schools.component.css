@@ -20,6 +20,9 @@
 .my-4 {
   margin: 16px 0px;
 }
+.mx-4 {
+  margin: 0px 16px;
+}
 
 .border-r {
   border-width: 0 1px 0 0;

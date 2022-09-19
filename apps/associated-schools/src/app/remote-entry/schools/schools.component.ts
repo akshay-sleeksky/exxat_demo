@@ -20,13 +20,13 @@ export class SchoolsComponent {
     {
       name: 'Abeilene Christian University',
       address: '4140 Parker Rd. Allentown, New Mexico 31134',
-      siteName: 'Sahuarita pRIMARY Schools:Lorri Andrews',
+      siteName: 'Sahuarita Primary Schools:Lorri Andrews',
       siteAddress: '1901 Thorridge Cir. Shiloh, Hawai 81063',
     },
     {
       name: 'Allen College PT',
       address: '4140 Parker Rd. Allentown',
-      siteName: 'Sahuarita pRIMARY Schools:Lorri Andrews',
+      siteName: 'Sahuarita Primary Schools:Lorri Andrews',
       siteAddress: '1901 Thorridge Cir. Shiloh, Hawai 81063',
     },
   ];

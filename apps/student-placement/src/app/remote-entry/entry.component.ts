@@ -7,8 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './entry.component.html',
 })
 export class RemoteEntryComponent {
-
-  constructor(private route: Router){}
+  constructor(private route: Router) {}
 
   rows = [
     {
@@ -21,13 +20,13 @@ export class RemoteEntryComponent {
     {
       name: 'Abeilene Christian University',
       address: '4140 Parker Rd. Allentown, New Mexico 31134',
-      siteName: 'Sahuarita pRIMARY Schools:Lorri Andrews',
+      siteName: 'Sahuarita Primary Schools:Lorri Andrews',
       siteAddress: '1901 Thorridge Cir. Shiloh, Hawai 81063',
     },
     {
       name: 'Allen College PT',
       address: '4140 Parker Rd. Allentown',
-      siteName: 'Sahuarita pRIMARY Schools:Lorri Andrews',
+      siteName: 'Sahuarita Primary Schools:Lorri Andrews',
       siteAddress: '1901 Thorridge Cir. Shiloh, Hawai 81063',
     },
     {
@@ -40,13 +39,13 @@ export class RemoteEntryComponent {
     {
       name: 'Abeilene Christian University',
       address: '4140 Parker Rd. Allentown, New Mexico 31134',
-      siteName: 'Sahuarita pRIMARY Schools:Lorri Andrews',
+      siteName: 'Sahuarita Primary Schools:Lorri Andrews',
       siteAddress: '1901 Thorridge Cir. Shiloh, Hawai 81063',
     },
     {
       name: 'Allen College PT',
       address: '4140 Parker Rd. Allentown',
-      siteName: 'Sahuarita pRIMARY Schools:Lorri Andrews',
+      siteName: 'Sahuarita Primary Schools:Lorri Andrews',
       siteAddress: '1901 Thorridge Cir. Shiloh, Hawai 81063',
     },
     {
@@ -59,22 +58,19 @@ export class RemoteEntryComponent {
     {
       name: 'Abeilene Christian University',
       address: '4140 Parker Rd. Allentown, New Mexico 31134',
-      siteName: 'Sahuarita pRIMARY Schools:Lorri Andrews',
+      siteName: 'Sahuarita Primary Schools:Lorri Andrews',
       siteAddress: '1901 Thorridge Cir. Shiloh, Hawai 81063',
     },
     {
       name: 'Allen College PT',
       address: '4140 Parker Rd. Allentown',
-      siteName: 'Sahuarita pRIMARY Schools:Lorri Andrews',
+      siteName: 'Sahuarita Primary Schools:Lorri Andrews',
       siteAddress: '1901 Thorridge Cir. Shiloh, Hawai 81063',
     },
   ];
-
 
   redirectTo = (site = '/associated-schools') => {
     console.log(site);
     this.route.navigate([site]);
   };
-
 }
-

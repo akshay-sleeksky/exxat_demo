@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'ng-mf-student-placement-entry',
+  selector: 'ng-mf-student',
   styleUrls: ['./student.component.css'],
   templateUrl: './student.component.html',
 })
-export class RemoteEntryComponent {
+export class StudentComponent {
   constructor(private route: Router) {}
 
   rows = [

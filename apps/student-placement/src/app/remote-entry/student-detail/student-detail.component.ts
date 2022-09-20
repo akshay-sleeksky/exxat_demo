@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'ng-mf-student-placement-entry',
-  styleUrls: ['./student.component.css'],
-  templateUrl: './student.component.html',
+  selector: 'ng-mf-student-detail',
+  styleUrls: ['./student-detail.component.css'],
+  templateUrl: './student-detail.component.html',
 })
-export class StudentDetails {
+export class StudentDetailsComponent {
   constructor(private route: Router) {}
 
   rows = [

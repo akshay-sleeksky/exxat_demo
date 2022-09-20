@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class HeaderNav {
   constructor(private route: Router) {}
 
-  @Input() headerName : string = '';
+  @Input() headerName = '';
 
   redirectTo = (site = '/associated-schools') => {
     console.log(site);

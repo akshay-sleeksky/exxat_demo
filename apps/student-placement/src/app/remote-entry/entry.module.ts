@@ -2,22 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { RemoteEntryComponent } from './student/student.component';
-import { StudentDetails } from './student-detail/student.component';
+import { StudentComponent } from './student/student.component';
+import { StudentDetailsComponent } from './student-detail/student-detail.component';
 import { HeaderNav } from '@ng-mf/data';
 
 @NgModule({
-  declarations: [RemoteEntryComponent,HeaderNav],
+  declarations: [StudentComponent, StudentDetailsComponent, HeaderNav],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {
         path: '',
-        component: RemoteEntryComponent,
+        component: StudentComponent,
       },
       {
         path: 'detail',
-        component: StudentDetails,
+        component: StudentDetailsComponent,
       },
     ]),
   ],

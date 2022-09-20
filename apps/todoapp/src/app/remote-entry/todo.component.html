@@ -1,0 +1,37 @@
+<div class="container">
+  <p class="h1">Aman Jat's todo app</p>
+  <div class="todoContainer">
+    <div class="inputContainer">
+      <input
+        #todoInput
+        class="input"
+        type="text"
+        (keyup.enter)="addTodo(todoInput.value)"
+        placeholder="Enter your task"
+      />
+      <button class="btn" (click)="addTodo(todoInput.value)">Add</button>
+    </div>
+    <div class="todoListContainer" *ngFor="let todo of todos; let i = index">
+      <div *ngIf="editableId === todo.id; else elseBlock">
+        <input
+          #editInput
+          class="input"
+          type="text"
+          (keyup.enter)="editTodo(todo.id, editInput.value)"
+          [placeholder]="todo.title"
+        />
+      </div>
+      <ng-template #elseBlock>
+        <p [ngStyle]="{ color: '#fff' }">{{ i + 1 }} : {{ todo.title }}</p>
+      </ng-template>
+
+      <div *ngIf="editableId !== todo.id; else elseBlock1">
+        <button class="btn success" (click)="setEditing(todo.id)">Edit</button>
+        <button class="btn error" (click)="deleteTodo(todo.id)">Delete</button>
+      </div>
+      <ng-template #elseBlock1>
+        <button class="btn" (click)="setEditing(null)">Cancel</button>
+      </ng-template>
+    </div>
+  </div>
+</div>

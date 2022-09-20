@@ -11,11 +11,6 @@ import { HeaderNav } from '@ng-mf/data';
     RouterModule.forRoot(
       [
         {
-          path: '**',
-          loadChildren: () =>
-            import('dashboard/Module').then((m) => m.RemoteEntryModule),
-        },
-        {
           path: '',
           loadChildren: () =>
             import('dashboard/Module').then((m) => m.RemoteEntryModule),
@@ -40,6 +35,11 @@ import { HeaderNav } from '@ng-mf/data';
         },
         {
           path: 'dashboard',
+          loadChildren: () =>
+            import('dashboard/Module').then((m) => m.RemoteEntryModule),
+        },
+        {
+          path: '**',
           loadChildren: () =>
             import('dashboard/Module').then((m) => m.RemoteEntryModule),
         },

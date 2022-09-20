@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { HeaderNav } from '@ng-mf/data';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderNav],
   imports: [
     BrowserModule,
     RouterModule.forRoot(

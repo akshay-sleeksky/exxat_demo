@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ng-mf/data": ["libs/data/src/index.ts"]
+      "@ng-mf/data": ["libs/data/src/index.ts"],
+      "@ng-mf/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

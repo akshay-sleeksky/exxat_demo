@@ -21,7 +21,7 @@
             "output": "assets/"
           }
         ],
-        "styles": ["apps/associated-schools/src/styles.css"],
+        "styles": ["libs/ui/common/globalTailwind.css"],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/associated-schools/webpack.config.js"

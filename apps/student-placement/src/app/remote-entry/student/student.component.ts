@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'ng-mf-student-placement-entry',
-  styleUrls: ['./entry.component.css'],
-  templateUrl: './entry.component.html',
+  styleUrls: ['./student.component.css'],
+  templateUrl: './student.component.html',
 })
 export class RemoteEntryComponent {
   constructor(private route: Router) {}

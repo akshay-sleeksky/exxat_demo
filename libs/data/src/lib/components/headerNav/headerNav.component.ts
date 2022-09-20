@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderNav {
   constructor(private route: Router) {}
+
+  @Input() headerName : string = '';
 
   redirectTo = (site = '/associated-schools') => {
     console.log(site);

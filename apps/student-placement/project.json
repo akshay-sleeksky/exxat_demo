@@ -14,7 +14,12 @@
         "tsConfig": "apps/student-placement/tsconfig.app.json",
         "assets": [
           "apps/student-placement/src/favicon.ico",
-          "apps/student-placement/src/assets"
+          "apps/student-placement/src/assets",
+          {
+            "input": "libs/data/src/lib/icons",
+            "glob": "**/*",
+            "output": "assets/"
+          }
         ],
         "styles": ["apps/student-placement/src/styles.css"],
         "scripts": [],

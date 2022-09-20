@@ -14,7 +14,12 @@
         "tsConfig": "apps/associated-schools/tsconfig.app.json",
         "assets": [
           "apps/associated-schools/src/favicon.ico",
-          "apps/associated-schools/src/assets"
+          "apps/associated-schools/src/assets",
+          {
+            "input": "libs/data/src/lib/icons",
+            "glob": "**/*",
+            "output": "assets/"
+          }
         ],
         "styles": ["apps/associated-schools/src/styles.css"],
         "scripts": [],

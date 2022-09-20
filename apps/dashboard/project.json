@@ -21,7 +21,7 @@
             "output": "assets/"
           }
         ],
-        "styles": ["apps/dashboard/src/styles.css"],
+        "styles": ["libs/ui/common/globalTailwind.css"],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/dashboard/webpack.config.js"

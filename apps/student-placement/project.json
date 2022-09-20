@@ -21,7 +21,9 @@
             "output": "assets/"
           }
         ],
-        "styles": ["apps/student-placement/src/styles.css"],
+        "styles": [
+          "libs/ui/common/globalTailwind.css"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/student-placement/webpack.config.js"

@@ -39,6 +39,11 @@ import { HeaderNav } from '@ng-mf/data';
             import('dashboard/Module').then((m) => m.RemoteEntryModule),
         },
         {
+          path: 'todo',
+          loadChildren: () =>
+            import('todoapp/Module').then((m) => m.RemoteEntryModule),
+        },
+        {
           path: '**',
           loadChildren: () =>
             import('dashboard/Module').then((m) => m.RemoteEntryModule),

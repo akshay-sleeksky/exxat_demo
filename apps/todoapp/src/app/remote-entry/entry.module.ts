@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RemoteEntryComponent } from './entry.component';
+import { TodoComponent } from './todo.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [RemoteEntryComponent],
-  imports: [CommonModule],
+  declarations: [TodoComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: TodoComponent,
+      },
+    ]),
+  ],
   providers: [],
-  exports: [RemoteEntryComponent],
 })
 export class RemoteEntryModule {}

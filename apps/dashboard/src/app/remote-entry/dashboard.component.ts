@@ -71,6 +71,15 @@ export class DashboardComponent {
       textColor: 'text-blue-300',
       notification: 5,
     },
+    {
+      icon: 'assets/icons/Student_placement_icon.svg',
+      src: 'todoapp',
+      header: 'Todo App',
+      content: 'Todo App that is using NgRx',
+      color: 'border-blue-300',
+      textColor: 'text-blue-300',
+      notification: 0,
+    },
   ];
 
   redirectTo = (site = '/associated-schools') => {

@@ -1,46 +1,47 @@
 <div class="h-screen bg-gray-100">
   <header-nav headerName="Associated Schools"></header-nav>
-  <div class="mx-4 flex justify-center flexCol">
+  <div class="mx-4 flex justify-center flex-col">
     <div class="flex my-4">
-      <!-- my location -->
-      <p class="link">Dashboard</p>
+      <p class="text-sky-800">Dashboard</p>
       <img
-        class="px hover:cursor-pointer"
+        class="px-2 hover:cursor-pointer"
         src="assets/Right_arrow.svg"
         alt="Apps"
       />
-      <p class="link">Associated Schools</p>
+      <p class="text-sky-800">Associated Schools</p>
       <img
-        class="px hover:cursor-pointer"
+        class="px-2 hover:cursor-pointer"
         src="assets/Right_arrow.svg"
         alt="Apps"
       />
-      <p class="placeholder">Sahuarita Primary Schools:Lorri Andrews</p>
+      <p class="text-slate-600">Sahuarita Primary Schools:Lorri Andrews</p>
     </div>
 
     <!-- school detail code start  -->
-    <div class="white-div">
-      <p class="h1">Sahuarita Primary Schools:Lorri Andrews</p>
-      <p class="h2">1901 Thorridge Cir. Shiloh, Hawai 81063</p>
+    <div class="bg-white p-4 rounded-lg border border-slate-200">
+      <p>Sahuarita Primary Schools:Lorri Andrews</p>
+      <p class="text-sm text-slate-600">
+        1901 Thorridge Cir. Shiloh, Hawai 81063
+      </p>
     </div>
     <!-- box-footer should be added to footer when content is available -->
 
-    <div class="my-box">
-      <div class="box-header">
+    <div class="my-4 bg-white rounded-2xl border border-slate-200 max-w-7xl">
+      <div class="border-slate-200 border-b py-3 px-4">
         <div class="flex justify-between">
           <p>Basic Information</p>
           <img
-            class="px hover:cursor-pointer"
+            class="px-2 hover:cursor-pointer"
             src="assets/icons/Pencil.svg"
             alt="Apps"
           />
         </div>
       </div>
-      <div class="box-content">
+      <div class="border-slate-200 border-b py-3 px-4">
         <div class="grid grid-cols-4 gap-4 my-4">
-          <div class="flex flexCol" *ngFor="let element of dataArray">
-            <p class="h1">{{ element.key }}</p>
-            <p class="h3">{{ element.value }}</p>
+          <div class="flex flex-col" *ngFor="let element of dataArray">
+            <p>{{ element.key }}</p>
+            <p class="text-sm text-slate-600">{{ element.value }}</p>
           </div>
         </div>
         <div>
@@ -51,8 +52,6 @@
         </div>
       </div>
     </div>
-
-    <my-box></my-box>
 
     <!-- school detail code ends  -->
   </div>

@@ -31,6 +31,11 @@ import { HeaderNav } from '@ng-mf/data';
           path: '**',
           component: HomeComponent,
         },
+        {
+          path: 'todoapp',
+          loadChildren: () =>
+            import('todoapp/Module').then((m) => m.RemoteEntryModule),
+        },
       ],
       { initialNavigation: 'enabledBlocking' }
     ),

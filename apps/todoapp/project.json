@@ -1,30 +1,30 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/student-placement/src",
+  "sourceRoot": "apps/todoapp/src",
   "prefix": "ng-mf",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/apps/student-placement",
-        "index": "apps/student-placement/src/index.html",
-        "main": "apps/student-placement/src/main.ts",
-        "polyfills": "apps/student-placement/src/polyfills.ts",
-        "tsConfig": "apps/student-placement/tsconfig.app.json",
+        "outputPath": "dist/apps/todoapp",
+        "index": "apps/todoapp/src/index.html",
+        "main": "apps/todoapp/src/main.ts",
+        "polyfills": "apps/todoapp/src/polyfills.ts",
+        "tsConfig": "apps/todoapp/tsconfig.app.json",
         "assets": [
-          "apps/student-placement/src/favicon.ico",
-          "apps/student-placement/src/assets",
-          {
-            "input": "libs/data/src/lib/icons",
-            "glob": "**/*",
-            "output": "assets/"
-          }
+          "apps/todoapp/src/favicon.ico",
+          "apps/todoapp/src/assets"
         ],
-        "styles": ["libs/ui/common/globalTailwind.css"],
+        "styles": [
+          "apps/todoapp/src/styles.css"
+        ],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/student-placement/webpack.config.js"
+          "path": "apps/todoapp/webpack.config.js"
         }
       },
       "configurations": {
@@ -43,13 +43,13 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/student-placement/src/environments/environment.ts",
-              "with": "apps/student-placement/src/environments/environment.prod.ts"
+              "replace": "apps/todoapp/src/environments/environment.ts",
+              "with": "apps/todoapp/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/student-placement/webpack.prod.config.js"
+            "path": "apps/todoapp/webpack.prod.config.js"
           }
         },
         "development": {
@@ -67,38 +67,40 @@
       "executor": "@nrwl/angular:webpack-server",
       "configurations": {
         "production": {
-          "browserTarget": "student-placement:build:production"
+          "browserTarget": "todoapp:build:production"
         },
         "development": {
-          "browserTarget": "student-placement:build:development"
+          "browserTarget": "todoapp:build:development"
         }
       },
       "defaultConfiguration": "development",
       "options": {
-        "port": 4202,
-        "publicHost": "http://localhost:4202"
+        "port": 4204,
+        "publicHost": "http://localhost:4204"
       }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "student-placement:build"
+        "browserTarget": "todoapp:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/student-placement/**/*.ts",
-          "apps/student-placement/**/*.html"
+          "apps/todoapp/**/*.ts",
+          "apps/todoapp/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/student-placement"],
+      "outputs": [
+        "coverage/apps/todoapp"
+      ],
       "options": {
-        "jestConfig": "apps/student-placement/jest.config.ts",
+        "jestConfig": "apps/todoapp/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -106,15 +108,15 @@
       "executor": "@nrwl/angular:file-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "student-placement:build",
-        "port": 4202
+        "port": 4204,
+        "buildTarget": "todoapp:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "student-placement:build:development"
+          "buildTarget": "todoapp:build:development"
         },
         "production": {
-          "buildTarget": "student-placement:build:production"
+          "buildTarget": "todoapp:build:production"
         }
       }
     }

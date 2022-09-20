@@ -9,6 +9,8 @@
     "data": "libs/data",
     "student-placement": "apps/student-placement",
     "student-placement-e2e": "apps/student-placement-e2e",
+    "todoapp": "apps/todoapp",
+    "todoapp-e2e": "apps/todoapp-e2e",
     "ui": "libs/ui"
   }
 }

@@ -1,4 +1,4 @@
 module.exports = {
-  name: 'dashboard',
+  name: 'shell',
   remotes: ['associated-schools', 'student-placement', 'todoapp'],
 };

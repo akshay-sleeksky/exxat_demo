@@ -2,18 +2,23 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './containers/home/home.component';
 import { HeaderNav } from '@ng-mf/data';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderNav],
+  declarations: [AppComponent, HeaderNav],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       [
         {
+          path: '**',
+          loadChildren: () =>
+            import('dashboard/Module').then((m) => m.RemoteEntryModule),
+        },
+        {
           path: '',
-          component: HomeComponent,
+          loadChildren: () =>
+            import('dashboard/Module').then((m) => m.RemoteEntryModule),
         },
         {
           path: 'associated-schools',
@@ -27,14 +32,16 @@ import { HeaderNav } from '@ng-mf/data';
           loadChildren: () =>
             import('student-placement/Module').then((m) => m.RemoteEntryModule),
         },
-        {
-          path: '**',
-          component: HomeComponent,
-        },
+
         {
           path: 'todoapp',
           loadChildren: () =>
             import('todoapp/Module').then((m) => m.RemoteEntryModule),
+        },
+        {
+          path: 'dashboard',
+          loadChildren: () =>
+            import('dashboard/Module').then((m) => m.RemoteEntryModule),
         },
       ],
       { initialNavigation: 'enabledBlocking' }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 interface Tabs {
@@ -12,11 +12,10 @@ interface Tabs {
 }
 
 @Component({
-  selector: 'ng-mf-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: 'ng-mf-dashboard',
+  templateUrl: './dashboard.component.html',
 })
-export class HomeComponent implements OnInit {
+export class DashboardComponent {
   constructor(private route: Router) {}
 
   array: number[] = [1, 2, 3, 4, 5];
@@ -78,5 +77,4 @@ export class HomeComponent implements OnInit {
     console.log(site);
     this.route.navigate([site]);
   };
-  ngOnInit(): void {}
 }

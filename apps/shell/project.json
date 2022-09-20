@@ -5,9 +5,7 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/shell",
         "index": "apps/shell/src/index.html",
@@ -23,9 +21,7 @@
             "output": "assets/"
           }
         ],
-        "styles": [
-          "libs/ui/common/globalTailwind.css"
-        ],
+        "styles": ["libs/ui/common/globalTailwind.css"],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/shell/webpack.config.js"
@@ -92,17 +88,12 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/shell/**/*.ts",
-          "apps/shell/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/shell/**/*.ts", "apps/shell/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/shell"
-      ],
+      "outputs": ["coverage/apps/shell"],
       "options": {
         "jestConfig": "apps/shell/jest.config.ts",
         "passWithNoTests": true

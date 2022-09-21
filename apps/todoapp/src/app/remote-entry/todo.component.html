@@ -12,25 +12,47 @@
       <button class="btn" (click)="addTodo(todoInput.value)">Add</button>
     </div>
     <div class="todoListContainer" *ngFor="let todo of todos; let i = index">
-      <div *ngIf="editableId === todo.id; else elseBlock">
-        <input
-          #editInput
-          class="input"
-          type="text"
-          (keyup.enter)="editTodo(todo.id, editInput.value)"
-          [placeholder]="todo.title"
-        />
+      <div
+        [ngStyle]="{
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: '100%'
+        }"
+        *ngIf="editableId === todo.id; else elseBlock"
+      >
+        <div
+          [ngStyle]="{
+            display: 'flex',
+            alignItems: 'center'
+          }"
+        >
+          <p [ngStyle]="{ color: '#fff' }">{{ i + 1 }}</p>
+          <input
+            #editInput
+            class="input"
+            type="text"
+            (keyup.enter)="editTodo(todo.id, editInput.value)"
+            [placeholder]="todo.title"
+            [ngStyle]="{ color: '#000' }"
+          />
+        </div>
+        <div [ngStyle]="{ display: 'flex' }">
+          <button class="btn" (click)="editTodo(todo.id, editInput.value)">
+            Save
+          </button>
+          <button class="btn" (click)="setEditing(null)">Cancel</button>
+        </div>
       </div>
       <ng-template #elseBlock>
         <p [ngStyle]="{ color: '#fff' }">{{ i + 1 }} : {{ todo.title }}</p>
-      </ng-template>
-
-      <div *ngIf="editableId !== todo.id; else elseBlock1">
-        <button class="btn success" (click)="setEditing(todo.id)">Edit</button>
-        <button class="btn error" (click)="deleteTodo(todo.id)">Delete</button>
-      </div>
-      <ng-template #elseBlock1>
-        <button class="btn" (click)="setEditing(null)">Cancel</button>
+        <div>
+          <button class="btn success" (click)="setEditing(todo.id)">
+            Edit
+          </button>
+          <button class="btn error" (click)="deleteTodo(todo.id)">
+            Delete
+          </button>
+        </div>
       </ng-template>
     </div>
   </div>

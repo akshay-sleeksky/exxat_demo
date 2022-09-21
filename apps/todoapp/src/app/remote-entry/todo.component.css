@@ -33,6 +33,7 @@
   border: none;
   min-width: 80px;
   cursor: pointer;
+  background-color: rgb(230, 230, 230);
 }
 .error {
   background-color: rgb(231, 108, 108);

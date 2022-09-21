@@ -1,4 +1,4 @@
-.container {
+.my-container {
   background-color: rgb(81, 92, 170);
   display: flex;
   flex-direction: column;
@@ -10,11 +10,11 @@
   justify-content: center;
   flex-direction: column;
 }
-.inputContainer {
+.my-inputContainer {
   display: flex;
   justify-content: center;
 }
-.h1 {
+.my-h1 {
   margin: 40px 0;
   font-size: 40px;
   color: #fff;

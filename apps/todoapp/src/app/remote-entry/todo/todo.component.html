@@ -11,7 +11,10 @@
       />
       <button class="btn" (click)="addTodo(todoInput.value)">Add</button>
     </div>
-    <div class="todoListContainer" *ngFor="let todo of todos; let i = index">
+    <div
+      class="todoListContainer"
+      *ngFor="let todo of todos$ | async; let i = index"
+    >
       <div
         [ngStyle]="{
           display: 'flex',

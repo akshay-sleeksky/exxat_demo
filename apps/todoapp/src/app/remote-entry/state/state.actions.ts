@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { Todo } from '../todo/todo.model';
+
+export const loadTodos = createAction('[Todo Page] Load Todos');
 
 export const addTodo = createAction(
   '[Todo Page] Add Todo',
@@ -11,19 +12,7 @@ export const removeTodo = createAction(
   props<{ id: string }>()
 );
 
-export const retrievedTodoList = createAction(
-  '[Book List/API] Retrieve Books Success',
-  props<{ todos: ReadonlyArray<Todo> }>()
-);
-
-export const loadTodos = createAction('[Todo Page] Load Todos');
-
-export const loadTodosSuccess = createAction(
-  '[Todo API] Todo Load Success',
-  props<{ todos: Todo[] }>()
-);
-
-export const loadTodosFailure = createAction(
-  '[Todo API] Todo Load Failure',
-  props<{ error: string }>()
+export const editTodo = createAction(
+  '[Todo Page] Edit Todo',
+  props<{ id: string; newTitle: string }>()
 );

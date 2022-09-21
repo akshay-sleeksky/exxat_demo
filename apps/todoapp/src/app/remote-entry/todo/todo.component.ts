@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import * as uuid from 'uuid';
 import { Store } from '@ngrx/store';
-import { loadTodos } from '../state/state.actions';
-import { TodoState } from '../state/state.reducer';
-import { createSelector } from '@ngrx/store';
-import { AppState } from '../state/app.state';
+import {
+  addTodo,
+  editTodo,
+  loadTodos,
+  removeTodo,
+} from '../state/state.actions';
 import { selectTodos } from '../state/state.selectors';
 
 @Component({
@@ -13,39 +14,30 @@ import { selectTodos } from '../state/state.selectors';
   styleUrls: ['./todo.component.css'],
 })
 export class TodoComponent implements OnInit {
-  title = 'todo';
-  editableId: string | null = null;
-
-  todos: { id: string; title: string }[] = [
-    { id: 'abc', title: 'Take a Shower' },
-    { id: 'abd', title: 'Finihs your breakfast' },
-  ];
+  public editableId: string | null = null;
 
   public todos$ = this.store.select(selectTodos);
 
   ngOnInit() {
     this.store.dispatch(loadTodos());
-    console.log('todos', this.todos$);
   }
 
   constructor(private store: Store) {}
 
-  addTodo = (todo: string) => {
-    this.todos.push({ id: uuid.v4(), title: todo });
-  };
+  addTodo(title: string) {
+    this.store.dispatch(addTodo({ title }));
+  }
 
   deleteTodo = (id: string) => {
-    const newArr = this.todos.filter((todo) => todo.id !== id);
-    this.todos = newArr;
+    this.store.dispatch(removeTodo({ id }));
   };
 
   setEditing = (payload: string | null) => {
     this.editableId = payload;
   };
 
-  editTodo = (id: string, value: string) => {
-    const index = this.todos.findIndex((todo) => todo.id == id);
-    this.todos[index].title = value;
+  editTodo = (id: string, newTitle: string) => {
+    this.store.dispatch(editTodo({ id, newTitle }));
     this.editableId = null;
   };
 }

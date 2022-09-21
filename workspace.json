@@ -9,6 +9,8 @@
     "data": "libs/data",
     "shell": "apps/shell",
     "shell-e2e": "apps/shell-e2e",
+    "student-detail-mui": "apps/student-detail-mui",
+    "student-detail-mui-e2e": "apps/student-detail-mui-e2e",
     "student-placement": "apps/student-placement",
     "student-placement-e2e": "apps/student-placement-e2e",
     "todoapp": "apps/todoapp",

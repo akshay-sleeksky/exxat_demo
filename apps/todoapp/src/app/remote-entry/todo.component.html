@@ -11,7 +11,7 @@
       />
       <button class="btn" (click)="addTodo(todoInput.value)">Add</button>
     </div>
-    <!-- <div class="todoListContainer" *ngFor="let todo of todos; let i = index">
+    <div class="todoListContainer" *ngFor="let todo of todos; let i = index">
       <div
         [ngStyle]="{
           display: 'flex',
@@ -27,14 +27,14 @@
           }"
         >
           <p [ngStyle]="{ color: '#fff' }">{{ i + 1 }}</p>
-       <input
+          <input
             #editInput
             class="input"
             type="text"
             (keyup.enter)="editTodo(todo.id, editInput.value)"
-            [placeholder]="todo.content"
+            [placeholder]="todo.title"
             [ngStyle]="{ color: '#000' }"
-          /> 
+          />
         </div>
         <div [ngStyle]="{ display: 'flex' }">
           <button class="btn" (click)="editTodo(todo.id, editInput.value)">
@@ -44,7 +44,7 @@
         </div>
       </div>
       <ng-template #elseBlock>
-        <p [ngStyle]="{ color: '#fff' }">{{ i + 1 }} : {{ todo.content }}</p>
+        <p [ngStyle]="{ color: '#fff' }">{{ i + 1 }} : {{ todo.title }}</p>
         <div>
           <button class="btn success" (click)="setEditing(todo.id)">
             Edit
@@ -54,6 +54,6 @@
           </button>
         </div>
       </ng-template>
-    </div> -->
+    </div>
   </div>
 </div>

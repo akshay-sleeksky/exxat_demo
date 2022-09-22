@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { studentReducer } from './state/student/student.reducer';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
       { initialNavigation: 'enabledBlocking' }
     ),
     StoreModule.forRoot(
-      {},
+      { student : studentReducer },
       {
         metaReducers: !environment.production ? [] : [],
         runtimeChecks: {

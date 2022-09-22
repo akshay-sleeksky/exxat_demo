@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { INIT_STUDENT } from '../../state/student/student.actions';
+import { Student } from '../../state/student/student.model';
+import { selectStudent } from '../../state/student/student.selectors';
 
 @Component({
   selector: 'ng-mf-student-detail',
@@ -7,7 +12,11 @@ import { Router } from '@angular/router';
   templateUrl: './student-detail.component.html',
 })
 export class StudentDetailsComponent {
-  constructor(private route: Router) {}
+  constructor(private route: Router, private store: Store) {}
+
+  readonly student$ : Observable<ReadonlyArray<Student>> =  this.store.select(selectStudent);
+
+  log = (val : any) => { console.log(val); }
 
   rows = [
     {
@@ -73,4 +82,8 @@ export class StudentDetailsComponent {
     console.log(site);
     this.route.navigate([site]);
   };
+
+  ngOnInit() {
+    this.store.dispatch(INIT_STUDENT({ payload : [{ id: 1, name : 'Akshay' }] }));
+  }
 }

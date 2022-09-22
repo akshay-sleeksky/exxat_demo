@@ -6,6 +6,10 @@ export const ADD_STUDENT = createAction(
     '[Student] ADD_STUDENT',
     props<{ payload : Student }>()
 );
+export const INIT_STUDENT = createAction(
+    '[Student] INIT_STUDENT',
+    props<{ payload : Student[] }>()
+);
 
 // export class AddStudent implements Action{
 //     readonly type = ADD_STUDENT;

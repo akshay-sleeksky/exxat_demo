@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { addTodo, editTodo, removeTodo } from '../state/state.actions';
-import { selectTodos } from '../state/state.selectors';
+import { addTodo, editTodo, removeTodo } from '../state/todo/todo.actions';
+import { selectTodos } from '../state/todo/todo.selectors';
 
 @Component({
   selector: 'ng-mf-todoapp',

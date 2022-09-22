@@ -1,11 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import {
-  addTodo,
-  editTodo,
-  loadTodos,
-  removeTodo,
-} from '../state/state.actions';
+import { addTodo, editTodo, removeTodo } from '../state/state.actions';
 import { selectTodos } from '../state/state.selectors';
 
 @Component({
@@ -13,14 +8,10 @@ import { selectTodos } from '../state/state.selectors';
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
 })
-export class TodoComponent implements OnInit {
+export class TodoComponent {
   public editableId: string | null = null;
 
   public todos$ = this.store.select(selectTodos);
-
-  ngOnInit() {
-    this.store.dispatch(loadTodos());
-  }
 
   constructor(private store: Store) {}
 

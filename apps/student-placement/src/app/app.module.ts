@@ -8,11 +8,15 @@ import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { studentReducer } from './state/student/student.reducer';
 import { StoreModule } from '@ngrx/store';
+import { prodReducer } from 'libs/products/src/lib/+state/products/products.reducer';
+import { ProductEffects } from 'libs/products/src/lib/+state/products/products.effects';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(
       [
         {
@@ -26,7 +30,7 @@ import { StoreModule } from '@ngrx/store';
       { initialNavigation: 'enabledBlocking' }
     ),
     StoreModule.forRoot(
-      { student : studentReducer },
+      { student : studentReducer, products : prodReducer },
       {
         metaReducers: !environment.production ? [] : [],
         runtimeChecks: {
@@ -35,7 +39,7 @@ import { StoreModule } from '@ngrx/store';
         },
       }
     ),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([ProductEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule.forRoot(),
   ],

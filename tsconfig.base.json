@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@ng-mf/data": ["libs/data/src/index.ts"],
+      "@ng-mf/products": ["libs/products/src/index.ts"],
       "@ng-mf/ui": ["libs/ui/src/index.ts"]
     }
   },

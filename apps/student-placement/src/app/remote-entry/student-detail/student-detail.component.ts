@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { select, Store } from '@ngrx/store';
+import {  Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { INIT_STUDENT } from '../../state/student/student.actions';
 import { Student } from '../../state/student/student.model';
 import { selectStudent } from '../../state/student/student.selectors';
+import { ProductEffects } from 'libs/products/src/lib/+state/products/products.effects';
+import { getAllProducts, getProductsLoaded, initProducts, loadProductsSuccess, ProductsEntity } from '@ng-mf/products';
 
 @Component({
   selector: 'ng-mf-student-detail',
@@ -15,6 +17,8 @@ export class StudentDetailsComponent {
   constructor(private route: Router, private store: Store) {}
 
   readonly student$ : Observable<ReadonlyArray<Student>> =  this.store.select(selectStudent);
+  readonly productLoaded$ : Observable<boolean> =  this.store.select(getProductsLoaded);
+  readonly allProducts$ : Observable<ProductsEntity[]> =  this.store.select(getAllProducts);
 
   log = (val : any) => { console.log(val); }
 
@@ -85,5 +89,10 @@ export class StudentDetailsComponent {
 
   ngOnInit() {
     this.store.dispatch(INIT_STUDENT({ payload : [{ id: 1, name : 'Akshay' }] }));
+    this.store.dispatch(initProducts())
+  //   this.store.dispatch(loadProductsSuccess({ products : [
+  //     {"id":1,"name":"Aman Jat","roll_number":1012},
+  //     {"id":2,"name":"Akshay Mohan","roll_number":1014},
+  //     {"id":3,"name":"Badal Mishra","roll_number":1016}] }))
   }
 }

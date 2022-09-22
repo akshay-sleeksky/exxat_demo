@@ -2,15 +2,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
-import { todoReducer } from './remote-entry/state/state.reducer';
+import { combineReducers, StoreModule } from '@ngrx/store';
+import { todoReducer } from './remote-entry/state/todo.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { songReducer } from './remote-entry/song/song.reducer';
 
+const reducers = combineReducers({
+  todos: todoReducer,
+  songs: songReducer,
+});
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ todos: todoReducer }),
+    StoreModule.forRoot({ states: reducers }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: false,

@@ -5,25 +5,24 @@ import { provideMockStore } from '@ngrx/store/testing';
 import { NxModule } from '@nrwl/angular';
 import { hot } from 'jasmine-marbles';
 import { Observable } from 'rxjs';
-
 import * as ProductsActions from './products.actions';
-import { ProductsEffects } from './products.effects';
+import { ProductEffects } from './products.effects';
 
 describe('ProductsEffects', () => {
   let actions: Observable<Action>;
-  let effects: ProductsEffects;
+  let effects: ProductEffects;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [NxModule.forRoot()],
       providers: [
-        ProductsEffects,
+        ProductEffects,
         provideMockActions(() => actions),
         provideMockStore(),
       ],
     });
 
-    effects = TestBed.inject(ProductsEffects);
+    effects = TestBed.inject(ProductEffects);
   });
 
   describe('init$', () => {

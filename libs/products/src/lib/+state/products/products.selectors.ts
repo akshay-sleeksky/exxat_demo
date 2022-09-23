@@ -9,7 +9,7 @@ import {
 export const getProductsState =
   createFeatureSelector<ProductsState>(PRODUCTS_FEATURE_KEY);
 
-const { selectAll, selectEntities } = productsAdapter.getSelectors();
+const { selectEntities } = productsAdapter.getSelectors();
 
 export const getProductsLoaded = createSelector(
   getProductsState,
@@ -24,6 +24,11 @@ export const getProductsError = createSelector(
 export const getAllProducts = createSelector(
   getProductsState,
   (state: ProductsState) => state.products
+);
+
+export const getHasLoad = createSelector(
+  getProductsState,
+  (state: ProductsState) => state.loaded
 );
 
 export const getProductsEntities = createSelector(

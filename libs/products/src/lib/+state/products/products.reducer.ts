@@ -1,6 +1,5 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, on, Action } from '@ngrx/store';
-
+import { createReducer, on } from '@ngrx/store';
 import * as ProductsActions from './products.actions';
 import { ProductsEntity } from './products.models';
 
@@ -35,7 +34,6 @@ export const prodReducer = createReducer(
     error: null,
   })),
   on(ProductsActions.loadProductsSuccess, (state, { products }) => {
-    // console.log({...state,products : [...products]})
     return { ...state, products: [...products], loaded: true };
   }),
   on(ProductsActions.loadProductsFailure, (state, { error }) => ({
@@ -43,10 +41,3 @@ export const prodReducer = createReducer(
     error,
   }))
 );
-
-// export function productsReducer(
-//   state: ProductsState | undefined,
-//   action: Action
-// ) {
-//   return reducer(state, action);
-// }

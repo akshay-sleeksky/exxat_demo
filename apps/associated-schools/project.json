@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/associated-schools",
         "index": "apps/associated-schools/src/index.html",
@@ -21,7 +23,9 @@
             "output": "assets/"
           }
         ],
-        "styles": ["libs/ui/common/globalTailwind.css"],
+        "styles": [
+          "libs/ui/common/globalTailwind.css"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/associated-schools/webpack.config.js"
@@ -75,8 +79,8 @@
       },
       "defaultConfiguration": "development",
       "options": {
-        "port": 4201,
-        "publicHost": "http://localhost:4201"
+        "port": 4203,
+        "publicHost": "http://localhost:4203"
       }
     },
     "extract-i18n": {
@@ -96,7 +100,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/associated-schools"],
+      "outputs": [
+        "coverage/apps/associated-schools"
+      ],
       "options": {
         "jestConfig": "apps/associated-schools/jest.config.ts",
         "passWithNoTests": true
@@ -107,7 +113,7 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "associated-schools:build",
-        "port": 4201
+        "port": 4203
       },
       "configurations": {
         "development": {

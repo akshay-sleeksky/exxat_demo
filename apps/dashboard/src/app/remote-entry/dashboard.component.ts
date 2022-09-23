@@ -22,8 +22,8 @@ export class DashboardComponent {
 
   tabs: Tabs[] = [
     {
-      icon: 'assets/icons/Profile_icon.svg',
-      src: 'associated-schools',
+      icon: 'assets/Profile_icon.svg',
+      src: '/',
       header: 'Profile',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem mauris consectetur vulputate aenean in enim ultrices.',
@@ -32,7 +32,7 @@ export class DashboardComponent {
       notification: 0,
     },
     {
-      icon: 'assets/icons/Associated_school_icon.svg',
+      icon: 'assets/Associated_school_icon.svg',
       src: 'associated-schools',
       header: 'Associated School',
       content:
@@ -42,8 +42,8 @@ export class DashboardComponent {
       notification: 4,
     },
     {
-      icon: 'assets/icons/Locations_icon.svg',
-      src: 'associated-schools',
+      icon: 'assets/Locations_icon.svg',
+      src: '/',
       header: 'Locations',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem mauris consectetur vulputate aenean in enim ultrices.',
@@ -52,8 +52,8 @@ export class DashboardComponent {
       notification: 0,
     },
     {
-      icon: 'assets/icons/Manage_avail_icon.svg',
-      src: 'associated-schools',
+      icon: 'assets/Manage_avail_icon.svg',
+      src: '/',
       header: 'Manage Availability',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem mauris consectetur vulputate aenean in enim ultrices.',
@@ -62,7 +62,7 @@ export class DashboardComponent {
       notification: 0,
     },
     {
-      icon: 'assets/icons/Student_placement_icon.svg',
+      icon: 'assets/Student_placement_icon.svg',
       src: 'student-placement',
       header: 'Student Placements',
       content:
@@ -72,7 +72,7 @@ export class DashboardComponent {
       notification: 5,
     },
     {
-      icon: 'assets/icons/Student_placement_icon.svg',
+      icon: 'assets/Student_placement_icon.svg',
       src: 'todoapp',
       header: 'Todo App',
       content: 'Todo App that is using NgRx',

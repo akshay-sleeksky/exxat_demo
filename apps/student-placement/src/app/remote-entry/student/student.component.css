@@ -1,74 +1,74 @@
 .flexCol {
-    flex-direction: column;
-  }
-  
-  .p-2 {
-    padding: 4px;
-  }
-  .py {
-    padding: 8px 0;
-  }
-  .px {
-    padding: 0px 8px;
-  }
-  .p {
-    padding: 8px;
-  }
-  .pl-32 {
-    padding-right: 128px;
-  }
-  .my-4 {
-    margin: 16px 0px;
-  }
-  
-  .border-r {
-    border-width: 0 1px 0 0;
-  }
-  
-  .border-l {
-    border-width: 0 0px 0 1px;
-  }
-  .text-sm {
-    font-size: 90%;
-  }
-  
-  .link {
-    color: #3f51b5;
-  }
-  
-  .placeholder {
-    color: rgba(0, 0, 0, 0.473);
-  }
-  
-  .upper-border {
-    border-width: 1px 1px 0 1px;
-    border-color: #0000001f;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
-  
-  .lower-border {
-    border-width: 0px 1px 1px 1px;
-    border-color: #0000001f;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-  }
-  
-  .justify-end {
-    justify-content: flex-end;
-  }
-  
-  th {
-    text-align: left;
-    background-color: #eeeeff;
-    padding: 10px;
-    border-width: 1px;
-    border-color: #0000001f;
-  }
-  td {
-    width: 300px;
-    padding: 10px;
-    border-width: 1px;
-    border-color: #0000001f;
-  }
-  
+  flex-direction: column;
+}
+
+.p-2 {
+  padding: 4px;
+}
+.py {
+  padding: 8px 0;
+}
+.px {
+  padding: 0px 8px;
+}
+.p {
+  padding: 8px;
+}
+.pl-32 {
+  padding-right: 128px;
+}
+.my-4 {
+  margin: 16px 0px;
+}
+
+.border-r {
+  border-width: 0 1px 0 0;
+}
+
+.border-l {
+  border-width: 0 0px 0 1px;
+}
+.text-sm {
+  font-size: 90%;
+}
+
+.link {
+  color: #3f51b5;
+  cursor: pointer;
+}
+
+.placeholder {
+  color: rgba(0, 0, 0, 0.473);
+}
+
+.upper-border {
+  border-width: 1px 1px 0 1px;
+  border-color: #0000001f;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.lower-border {
+  border-width: 0px 1px 1px 1px;
+  border-color: #0000001f;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+th {
+  text-align: left;
+  background-color: #eeeeff;
+  padding: 10px;
+  border-width: 1px;
+  border-color: #0000001f;
+}
+td {
+  width: 300px;
+  padding: 10px;
+  border-width: 1px;
+  border-color: #0000001f;
+}

@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/student-placement",
         "index": "apps/student-placement/src/index.html",
@@ -21,7 +23,9 @@
             "output": "assets/"
           }
         ],
-        "styles": ["libs/ui/common/globalTailwind.css"],
+        "styles": [
+          "libs/ui/common/globalTailwind.css"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/student-placement/webpack.config.js"
@@ -96,7 +100,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/student-placement"],
+      "outputs": [
+        "coverage/apps/student-placement"
+      ],
       "options": {
         "jestConfig": "apps/student-placement/jest.config.ts",
         "passWithNoTests": true

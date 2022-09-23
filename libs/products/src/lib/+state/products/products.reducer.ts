@@ -10,7 +10,7 @@ export interface ProductsState extends EntityState<ProductsEntity> {
   selectedId?: string | number; // which Products record has been selected
   loaded: boolean; // has the Products list been loaded
   error?: string | null; // last known error (if any)
-  products : ProductsEntity[];
+  products: ProductsEntity[];
 }
 
 export interface ProductsPartialState {
@@ -23,7 +23,7 @@ export const productsAdapter: EntityAdapter<ProductsEntity> =
 export const initialProductsState: ProductsState =
   productsAdapter.getInitialState({
     // set initial required properties
-    products : [],
+    products: [],
     loaded: false,
   });
 
@@ -34,12 +34,10 @@ export const prodReducer = createReducer(
     loaded: false,
     error: null,
   })),
-  on(ProductsActions.loadProductsSuccess, (state, { products }) =>{
+  on(ProductsActions.loadProductsSuccess, (state, { products }) => {
     // console.log({...state,products : [...products]})
-    return {...state,products : [...products],loaded : true}
-  }
-    
-  ),
+    return { ...state, products: [...products], loaded: true };
+  }),
   on(ProductsActions.loadProductsFailure, (state, { error }) => ({
     ...state,
     error,

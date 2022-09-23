@@ -1,8 +1,6 @@
-import { ProductsEntity } from "./+state/products/products.models";
-
+import { ProductsEntity } from './+state/products/products.models';
 
 export interface AppState {
-    product : ProductsEntity;
-    hasLoaded : boolean
+  product: ProductsEntity;
+  hasLoaded: boolean;
 }
-  

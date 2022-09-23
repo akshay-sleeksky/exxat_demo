@@ -23,7 +23,7 @@ export const initialProductsState: ProductsState =
   productsAdapter.getInitialState({
     // set initial required properties
     products: [],
-    loaded: false,
+    loaded: true,
   });
 
 export const prodReducer = createReducer(

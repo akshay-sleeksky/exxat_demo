@@ -7,6 +7,10 @@ export const loadProductsSuccess = createAction(
   '[Products/API] Load Products Success',
   props<{ products: ProductsEntity[] }>()
 );
+export const addProducts = createAction(
+  '[Products/API] Add Products',
+  props<{ products: ProductsEntity[] }>()
+);
 
 export const loadProductsFailure = createAction(
   '[Products/API] Load Products Failure',

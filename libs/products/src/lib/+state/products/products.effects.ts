@@ -25,11 +25,11 @@ export class ProductEffects {
     private store: Store
   ) {}
 
-  loadPhotos$ = createEffect(() =>
+  loadProducts$ = createEffect(() =>
     this.actions$.pipe(
       ofType(initProducts),
       withLatestFrom(this.store.select(getHasLoad)),
-      filter(([action, loaded]) => !loaded),
+      filter(([action, loaded ]) => { return !loaded}),
       switchMap(() =>
         this.productService.getAll().pipe(
           map((products) => {

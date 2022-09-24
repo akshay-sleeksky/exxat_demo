@@ -5,6 +5,7 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromProducts from './+state/products/products.reducer';
 import { ProductEffects } from './+state/products/products.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductFacade } from './+state/products/products.facade';
 
 @NgModule({
   imports: [
@@ -16,5 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
     ),
     EffectsModule.forFeature([ProductEffects]),
   ],
+  providers: [ProductFacade]
 })
 export class ProductsModule {}

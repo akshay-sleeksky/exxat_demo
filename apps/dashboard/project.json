@@ -17,7 +17,12 @@
         "tsConfig": "apps/dashboard/tsconfig.app.json",
         "assets": [
           "apps/dashboard/src/favicon.ico",
-          "apps/dashboard/src/assets"
+          "apps/dashboard/src/assets",
+          {
+            "input": "libs/data/src/lib/icons",
+            "glob": "**/*",
+            "output": "assets/"
+          }
         ],
         "styles": [
           "libs/ui/common/globalTailwind.css"

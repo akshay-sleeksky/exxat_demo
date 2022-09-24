@@ -23,21 +23,27 @@ export const initialProductsState: ProductsState =
   productsAdapter.getInitialState({
     // set initial required properties
     products: [],
-    loaded: true,
+    loaded: false,
   });
 
 export const prodReducer = createReducer(
   initialProductsState,
-  on(ProductsActions.initProducts, (state) => ({
-    ...state,
-    loaded: false,
-    error: null,
-  })),
   on(ProductsActions.loadProductsSuccess, (state, { products }) => {
+    // console.log( state.loaded)
+    if( state.loaded )
+      return { ...state, products: [...state.products, ...products] } 
     return { ...state, products: [...products], loaded: true };
   }),
-  on(ProductsActions.loadProductsFailure, (state, { error }) => ({
-    ...state,
-    error,
-  }))
+  on(ProductsActions.addProducts, (state, { products }) => {
+    // console.log( Date.now().toString())
+    return { ...state, products: [...state.products, ...products], loaded: true };
+  }),
+  on(ProductsActions.loadProductsFailure, (state, { error }) => {
+
+    // console.log('Trigger error')
+    return ({
+      ...state,
+      error,
+    })
+  })
 );

@@ -7,15 +7,12 @@ import { todoReducer } from './remote-entry/state/todo/todo.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { songReducer } from './remote-entry/state/song/song.reducer';
 
-const reducers = combineReducers({
-  todos: todoReducer,
-  songs: songReducer,
-});
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ states: reducers }),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: false,

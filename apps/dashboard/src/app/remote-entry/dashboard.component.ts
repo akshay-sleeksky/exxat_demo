@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductFacade, ProductsEntity} from '@ng-mf/products';
+import {  Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 interface Tabs {
   icon: string;
@@ -16,9 +19,15 @@ interface Tabs {
   templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {
-  constructor(private route: Router) {}
+  constructor(private route: Router, private store : Store, private productFacade : ProductFacade) {}
 
   array: number[] = [1, 2, 3, 4, 5];
+  readonly productLoaded$ : Observable<boolean> = this.productFacade.productLoaded$;
+  readonly allProducts$ : Observable<ProductsEntity[]> =  this.productFacade.allProducts$;
+
+  log( value : any ){
+    console.log(value);
+  }
 
   tabs: Tabs[] = [
     {
@@ -86,4 +95,12 @@ export class DashboardComponent {
     console.log(site);
     this.route.navigate([site]);
   };
+
+  ngOnInit() {
+    this.productFacade.initProducts();
+    // this.productFacade.addProducts({ products : [
+    //   {"id":4,"name":"Jat","roll_number":1018},
+    //   {"id":5,"name":"Mohan","roll_number":1020},
+    //   {"id":6,"name":"Mishra","roll_number":1022}] })
+  }
 }

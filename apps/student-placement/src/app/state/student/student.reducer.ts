@@ -8,6 +8,7 @@ const defaultState :  ReadonlyArray<Student> = [
     { id: 2, name : 'Yadu' }
 ];
 
+export const PRODUCTS_FEATURE_KEY = 'student';
 
 
 // export function studentReducer ( state : Student[] = defaultState, action : Action  ){
@@ -28,7 +29,7 @@ export const studentReducer = createReducer(
         action.payload,
       ]),
      on(StudentActions.INIT_STUDENT, (state, action) => { 
-        console.log(action.payload);
+        // console.log(action.payload);
         return ([...state,...action.payload])
     })
 );

@@ -3,11 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HeaderNav } from '@ng-mf/data';
+import { ProductsModule } from '@ng-mf/products';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent, HeaderNav],
   imports: [
     BrowserModule,
+    ProductsModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     RouterModule.forRoot(
       [
         {
